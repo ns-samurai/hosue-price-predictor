@@ -62,6 +62,6 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           push: true
-          tags: shimoda21/fastapi:{{ github.sha }}
+          tags: shimoda21/fastapi:${{ github.sha }}
           context: "."
           file: "Dockerfile"
