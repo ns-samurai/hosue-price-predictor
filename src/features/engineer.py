@@ -29,8 +29,8 @@ def create_features(df):
     logger.info("Created 'house_age' feature")
     
     # Price per square foot
-    df_featured['price_per_sqft'] = df_featured['price'] / df_featured['sqft']
-    logger.info("Created 'price_per_sqft' feature")
+    # df_featured['price_per_sqft'] = df_featured['price'] / df_featured['sqft']
+    # logger.info("Created 'price_per_sqft' feature")
     
     # Bedroom to bathroom ratio
     df_featured['bed_bath_ratio'] = df_featured['bedrooms'] / df_featured['bathrooms']
@@ -48,7 +48,9 @@ def create_preprocessor():
     
     # Define feature groups
     categorical_features = ['location', 'condition']
-    numerical_features = ['sqft', 'bedrooms', 'bathrooms', 'house_age', 'price_per_sqft', 'bed_bath_ratio']
+    numerical_features = ['sqft', 'bedrooms', 'bathrooms', 'house_age', 
+                        #   'price_per_sqft', 
+                          'bed_bath_ratio']
     
     # Preprocessing for numerical features
     numerical_transformer = Pipeline(steps=[
